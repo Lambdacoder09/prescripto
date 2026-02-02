@@ -130,7 +130,47 @@ Once all services are running:
 
 </div>
 
-<br /><hr /><br />
+<br/><hr/><br/>
+
+## 🚀 Deployment Guide (Vercel)
+
+This project is configured for easy deployment to **Vercel**. Since it contains three distinct components (Backend, Admin, and Frontend), you should deploy them as separate projects or use Vercel's monorepo support.
+
+### 1. Backend Deployment
+1. Go to the [Vercel Dashboard](https://vercel.com/dashboard) and click **"Add New" > "Project"**.
+2. Import your GitHub repository.
+3. In the **"Framework Preset"**, select `Other`.
+4. Set the **Root Directory** to `backend`.
+5. Add the following **Environment Variables**:
+   - `MONGODB_URI` (Your MongoDB connection string)
+   - `JWT_SECRET` (A secure random string)
+   - `ADMIN_EMAIL` (For admin dashboard login)
+   - `ADMIN_PASSWORD` (For admin dashboard login)
+   - `CLOUDINARY_NAME`
+   - `CLOUDINARY_API_KEY`
+   - `CLOUDINARY_SECRET_KEY`
+6. Click **Deploy**. Once finished, copy the **Deployment URL** (e.g., `https://prescripto-backend.vercel.app`).
+
+### 2. Admin Panel Deployment
+1. Click **"Add New" > "Project"** again and select the same repository.
+2. In the **"Framework Preset"**, select `Vite`.
+3. Set the **Root Directory** to `admin`.
+4. Add the following **Environment Variable**:
+   - `VITE_BACKEND_URL`: (Paste your backend deployment URL from step 1)
+5. Click **Deploy**.
+
+### 3. Frontend (Clientside) Deployment
+1. Click **"Add New" > "Project"** again and select the same repository.
+2. In the **"Framework Preset"**, select `Vite`.
+3. Set the **Root Directory** to `clientside`.
+4. Add the following **Environment Variable**:
+   - `VITE_BACKEND_URL`: (Paste your backend deployment URL from step 1)
+5. Click **Deploy**.
+
+> [!TIP]
+> Make sure your MongoDB Atlas (or other provider) allows connections from any IP address (`0.0.0.0/0`) since Vercel's deployment IPs are dynamic.
+
+<br/><hr/><br/>
 
 ## Author :black_nib:
 - _[NIYIBIZI Elysée](https://linktr.ee/niyibizi_elysee)👨🏿‍💻 | [Github](https://github.com/elyse502) | [Linkedin](https://www.linkedin.com/in/niyibizi-elys%C3%A9e/) | [Twitter](https://twitter.com/Niyibizi_Elyse)._
