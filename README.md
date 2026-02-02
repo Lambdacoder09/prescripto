@@ -18,6 +18,101 @@ This full stack appointment booking system can be used by a doctor or a hospital
 
 <br/><hr/><br/>
 
+## 🚀 Getting Started
+
+Follow these instructions to set up and run the Prescripto project locally.
+
+### 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v14 or higher) - [Download here](https://nodejs.org/)
+- **MongoDB** - [Download here](https://www.mongodb.com/try/download/community) or use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (cloud database)
+- **npm** (comes with Node.js)
+
+### 📦 Installation
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/elyse502/prescripto.git
+cd prescripto
+```
+
+#### 2. Backend Setup
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file in the `backend` directory with the following variables:
+```env
+PORT=4000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+CLOUDINARY_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_SECRET_KEY=your_cloudinary_secret_key
+```
+
+> **Note**: Replace the placeholder values with your actual credentials.
+
+#### 3. Admin Panel Setup
+```bash
+cd ../admin
+npm install
+```
+
+Create a `.env` file in the `admin` directory:
+```env
+VITE_BACKEND_URL=http://localhost:4000
+```
+
+#### 4. Frontend (Clientside) Setup
+```bash
+cd ../clientside
+npm install
+```
+
+Create a `.env` file in the `clientside` directory:
+```env
+VITE_BACKEND_URL=http://localhost:4000
+```
+
+### ▶️ Running the Application
+
+You need to run all three components simultaneously in separate terminal windows:
+
+#### Terminal 1 - Backend Server
+```bash
+cd backend
+npm run server
+```
+The backend will start on `http://localhost:4000`
+
+#### Terminal 2 - Admin Panel
+```bash
+cd admin
+npm run dev
+```
+The admin panel will be available at the URL shown in the terminal (typically `http://localhost:5173`)
+
+#### Terminal 3 - Frontend (User Interface)
+```bash
+cd clientside
+npm run dev
+```
+The frontend will be available at the URL shown in the terminal (typically `http://localhost:5174`)
+
+### 🎯 Access Points
+
+Once all services are running:
+- **Frontend (User)**: Visit the URL shown in Terminal 3
+- **Admin Dashboard**: Visit the URL shown in Terminal 2
+- **Backend API**: `http://localhost:4000`
+
+<br/><hr/><br/>
+
 <div align="center">
 
 # User Dashboard 👤:
